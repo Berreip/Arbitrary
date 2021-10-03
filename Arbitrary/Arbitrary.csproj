@@ -12,6 +12,7 @@
         <PackageReleaseNotes>Initial version</PackageReleaseNotes>
         <Company>Berreip</Company>
         <Product>Arbitrary</Product>
+        <PackageIcon>PRF_Core_Component_Icon.png</PackageIcon>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -21,5 +22,12 @@
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
       <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="..\PRF_Core_Component_Icon.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+    </ItemGroup>
 
 </Project>
