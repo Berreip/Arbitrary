@@ -13,6 +13,7 @@
         <Company>Berreip</Company>
         <Product>Arbitrary</Product>
         <PackageIcon>PRF_Core_Component_Icon.png</PackageIcon>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
