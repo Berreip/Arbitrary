@@ -22,6 +22,19 @@ namespace ArbitraryTest
             _sut = ArbitratyPredefined.GetDefault();
         }
 
+        [Test]
+        public void ReplaceGenerator()
+        {
+            //Arrange
+
+            //Act
+            _sut.RegisterGenerator(ArbitraryGeneratorPredefined.IntGenerator);
+
+            //Assert
+            Assert.Pass();
+        }
+
+        
         /// <summary>
         /// should not very few colision for 1000 requested int 
         /// </summary>
@@ -39,7 +52,7 @@ namespace ArbitraryTest
             }
 
             //Assert
-            Assert.Greater(hashDuplicates.Count, 998);
+            Assert.Greater(hashDuplicates.Count, 990);
         }
         
         [Test]
@@ -53,7 +66,7 @@ namespace ArbitraryTest
             
             //Assert
             Assert.AreEqual(1_000, range.Length);
-            Assert.Greater(range.ToHashSet().Count, 998);
+            Assert.Greater(range.ToHashSet().Count, 990);
         }
         
           
@@ -97,7 +110,7 @@ namespace ArbitraryTest
             }
 
             //Assert
-            Assert.Greater(hashDuplicates.Count, 998);
+            Assert.Greater(hashDuplicates.Count, 990);
         }
 
         [Test]
@@ -114,7 +127,7 @@ namespace ArbitraryTest
             }
 
             //Assert
-            Assert.Greater(hashDuplicates.Count, 998);
+            Assert.Greater(hashDuplicates.Count, 990);
         }
         
         [Test]
@@ -131,7 +144,7 @@ namespace ArbitraryTest
             }
 
             //Assert
-            Assert.Greater(hashDuplicates.Count, 998);
+            Assert.Greater(hashDuplicates.Count, 990);
         }  
         
         [Test]
@@ -148,7 +161,7 @@ namespace ArbitraryTest
             }
 
             //Assert
-            Assert.Greater(hashDuplicates.Count, 998);
+            Assert.Greater(hashDuplicates.Count, 990);
         }
           
         [Test]
@@ -181,7 +194,7 @@ namespace ArbitraryTest
             }
 
             //Assert
-            Assert.Greater(hashDuplicates.Count, 998);
+            Assert.Greater(hashDuplicates.Count, 990);
         }
         
         [Test]
@@ -251,8 +264,25 @@ namespace ArbitraryTest
             }
 
             //Assert
-            Assert.Greater(hashDuplicates.Count, 998);
+            Assert.Greater(hashDuplicates.Count, 990);
         }
+         
+        [Test]
+        [Repeat(1000)]
+        public void Guid_Tests()
+        {
+            //Arrange
+            var hashDuplicates = new HashSet<Guid>();
+
+            //Act
+            for (var i = 0; i < 1000; i++)
+            {
+                hashDuplicates.Add(_sut.GetNew<Guid>());
+            }
+
+            //Assert
+            Assert.Greater(hashDuplicates.Count, 990);
+        }  
         
         [Test]
         [Repeat(1000)]
